@@ -1,7 +1,8 @@
 \documentclass[tikz,border=5mm]{standalone}
+
 \usepackage[edges]{forest}
+
 \usetikzlibrary{arrows.meta}
-\definecolor{foldercolor}{RGB}{124,166,198}
 
 
 \begin{document}
@@ -9,17 +10,17 @@
 \begin{forest}
     for tree={
     align=center,
-    font=\sffamily,
+    font=\Huge,
     edge+={thick, -{Stealth[]}},
-    l sep'+=10pt,
-    fork sep'=10pt,
+    l sep'+=20pt,
+    fork sep'=20pt,
     },
     forked edges,
     if level=0{
             inner xsep=0pt,
             tikz={\draw [thick] (.children first) -- (.children last);}
         }{},
-    [DATA
+    [Natural Classification of Data - V2
     [Macro
     [CPI
         [CPI-A]
@@ -52,27 +53,39 @@
         [Akhza-D]
         [Others]]
     [Fluctuations-D]
-    [Preferred-Shares-D]
+    [Preferred-Shares-D
+    [1]
+    [2]
+    [3]
+    [4]]
     [Stocks-D
-    [Adjusted]
-    [Not-Adj]]]
+    [Adjusted
+        [1]
+        [2]
+        [3]
+        [4]]
+    [Not-Adj
+    [1]
+    [2]
+    [3]
+    [4]]]]
     [Ratios
         [MktCap-D]
         [PE-D]]
     [Trades
         [Ind-Ins-D]]]
     [Codal
-        [All-Codal]
+        [All-Letters-S]
         [Auditors]
         [Board-Members]
         [Events]]
     [Financials
-        [BS-A]
-        [DPS]
-        [EPS]
-        [Fiscal-Year]
-        [IS-Q]
-        [Sales-M]]
+        [0-IS-Q]
+        [1-BS-A]
+        [2-EPS-A]
+        [3-DPS-A]
+        [4-Fis-Year]
+        [5-Sales-M]]
     [Funds
         [Holding
                 [Monthly]
@@ -85,7 +98,9 @@
         [EWI-D]
         [EWPI-D]
         [Industries-D]
-        [Overall]
+        [Overall
+                [Annual]
+                [Daily]]
         [TEPIX-D]]]
     [Ownership
         [BlockHolders
