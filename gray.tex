@@ -1,0 +1,126 @@
+\documentclass[tikz,border=5mm]{standalone}
+
+\usepackage[edges]{forest}
+
+\usetikzlibrary{shadows}
+
+
+\begin{document}
+
+\begin{forest}
+    for tree={
+    grow'=east,
+    font=\Huge,
+    forked edges,
+    draw,
+    rounded corners=7pt,
+    node options={align=center},
+    text width=4.5cm,
+    parent anchor=east,
+    child anchor=west,
+    l sep=10mm,
+    inner sep=5mm,
+    outer xsep=0mm,
+    outer ysep=3mm,
+    edge path={
+            \noexpand\path[draw, \forestoption{edge}] (!u.parent anchor) -- +(5mm,0) |- (.child anchor)\forestoption{edge label};
+        },
+    tier/.wrap pgfmath arg={tier #1}{level()},
+    edge={ultra thick, rounded corners=2pt},
+    rounded corners=5pt,
+    fill=white,
+    drop shadow,
+    if level=0{rotate=90, text width=15cm, inner sep=10mm}{
+        },
+    },
+    [Natural Classification of Data\ -\ V2, fill=gray!20
+    [Macro,
+    [CPI
+        [CPI-A, fill=gray!20]
+        [CPI-M,fill=gray!20]]
+    [Gold
+        [NewCoin-D]
+        [OldCoin-M]]
+    [RF-Rate
+    [Deposit-Rate-A,fill=gray!20]
+    [RF-A,fill=gray!20]
+    [RF-M,fill=gray!20]]
+    [Real-Estate
+    [All-Trades-D]
+    [CB-Index-Q]
+    [Home-M]]
+    [USD
+        [Annual,fill=gray!20]
+        [Bonbast-D,fill=gray!20]
+        [GovUSD-M,fill=gray!20]
+        [Monthly,fill=gray!20]
+        [OHLC-D,fill=gray!20]]]
+    [TSE
+    [Board
+    [About-Shares
+    [BaseVol-D]
+    [OutShares-D]]
+    [LOB]
+    [Prices
+    [Bonds,fill=gray!20
+    [Akhza-D]
+    [Others]]
+    [Fluctuations-D,fill=gray!20]
+    [Preferred-Shares-D,fill=gray!20
+    [1,fill=gray!20]
+    [2,fill=gray!20]
+    [3,fill=gray!20]
+    [4,fill=gray!20]]
+    [Stocks-D,fill=gray!20
+    [Adjusted
+        [1]
+        [2]
+        [3]
+        [4]]
+    [Not-Adj
+    [1,fill=gray!20]
+    [2,fill=gray!20]
+    [3,fill=gray!20]
+    [4,fill=gray!20]]]]
+    [Ratios
+        [MktCap-D]
+        [PE-D]]
+    [Trades
+        [Ind-Ins-D,fill=gray!20]]]
+    [Codal
+        [All-Letters-S,fill=gray!20]
+        [Auditors,fill=gray!20]
+        [Board-Members,fill=gray!20]
+        [Events,fill=gray!20]]
+    [Financials
+        [BS-A]
+        [DPS-A]
+        [EPS-A]
+        [Fis-Year]
+        [IS-Q]
+        [Sales-M]]
+    [Funds
+    [Holdings,fill=gray!20
+    [Monthly]
+    [Quarterly]]
+    [Portfo-Compose-M,fill=gray!20]]
+    [Market-level
+    [HafezDB-Duration]
+    [IPO-Date]
+    [Indices
+        [EWI-D]
+        [EWPI-D]
+        [Industries-D]
+        [Overall
+                [Annual]
+                [Daily]]
+        [TEPIX-D]]]
+    [Ownership
+    [Block-Holders
+    [Annual,fill=gray!20]
+    [Daily,fill=gray!20]
+    [Holders-A,fill=gray!20]]
+    [CR-CFR]]]]
+\end{forest}
+
+\end{document}

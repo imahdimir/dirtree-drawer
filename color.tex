@@ -1,0 +1,126 @@
+\documentclass[tikz,border=5mm]{standalone}
+
+\usepackage[edges]{forest}
+
+\usetikzlibrary{shadows}
+
+
+\begin{document}
+
+\begin{forest}
+    for tree={
+    grow'=east,
+    font=\Huge,
+    forked edges,
+    draw,
+    rounded corners=7pt,
+    node options={align=center},
+    text width=4.5cm,
+    parent anchor=east,
+    child anchor=west,
+    l sep=10mm,
+    inner sep=5mm,
+    outer xsep=0mm,
+    outer ysep=3mm,
+    edge path={
+            \noexpand\path[draw, \forestoption{edge}] (!u.parent anchor) -- +(5mm,0) |- (.child anchor)\forestoption{edge label};
+        },
+    tier/.wrap pgfmath arg={tier #1}{level()},
+    edge={ultra thick, rounded corners=2pt},
+    rounded corners=5pt,
+    fill=white,
+    drop shadow,
+    if level=0{rotate=90, text width=15cm, inner sep=10mm}{
+        },
+    },
+    [Natural Classification of Data\ -\ V2, fill=green!50
+    [Macro, fill=red!30
+    [CPI, fill=green!20
+    [CPI-A, fill=blue!20]
+    [CPI-M, fill=blue!20]]
+    [Gold, fill=green!20
+    [NewCoin-D,fill=red!20]
+    [OldCoin-M,fill=red!20]]
+    [RF-Rate, fill=green!20
+    [Deposit-Rate-A, fill=blue!20]
+    [RF-A, fill=blue!20]
+    [RF-M, fill=blue!20]]
+    [Real-Estate, fill=green!20
+    [All-Trades-D,fill=red!20]
+    [CB-Index-Q,fill=red!20]
+    [Home-M,fill=red!20]]
+    [USD, fill=green!20
+    [Annual, fill=blue!20]
+    [Bonbast-D, fill=blue!20]
+    [GovUSD-M, fill=blue!20]
+    [Monthly, fill=blue!20]
+    [OHLC-D, fill=blue!20]]]
+    [TSE, fill=red!30
+    [Board,fill=blue!20
+    [About-Shares, fill=orange!20
+    [BaseVol-D, fill=red!20]
+    [OutShares-D, fill=red!20]]
+    [LOB, fill=orange!20]
+    [Prices, fill=orange!20
+    [Bonds,fill=blue!20
+    [Akhza-D, fill=green!20]
+    [Others, fill=green!20]]
+    [Fluctuations-D,fill=blue!20]
+    [Preferred-Shares-D,fill=blue!20
+    [1,fill=orange!20]
+    [2,fill=orange!20]
+    [3,fill=orange!20]
+    [4,fill=orange!20]]
+    [Stocks-D,fill=blue!20
+    [Adjusted, fill=green!20
+    [1, fill=red!20]
+    [2,fill=red!20]
+    [3,fill=red!20]
+    [4,fill=red!20]]
+    [Not-Adj, fill=green!20
+    [1,fill=blue!20]
+    [2,fill=blue!20]
+    [3,fill=blue!20]
+    [4,fill=blue!20]]]]
+    [Ratios, fill=orange!20
+    [MktCap-D, fill=red!20]
+    [PE-D, fill=red!20]]
+    [Trades, fill=orange!20
+    [Ind-Ins-D,,fill=blue!20]]]
+    [Codal,fill=blue!20
+    [All-Letters-S, fill=green!20]
+    [Auditors, fill=green!20]
+    [Board-Members, fill=green!20]
+    [Events, fill=green!20]]
+    [Financials,fill=blue!20
+    [BS-A, fill=orange!20]
+    [DPS-A, fill=orange!20]
+    [EPS-A, fill=orange!20]
+    [Fis-Year, fill=orange!20]
+    [IS-Q, fill=orange!20]
+    [Sales-M, fill=orange!20]]
+    [Funds,fill=blue!20
+    [Holdings, fill=green!20
+    [Monthly,fill=red!20]
+    [Quarterly,fill=red!20]]
+    [Portfo-Compose-M, fill=green!20]]
+    [Market-level,fill=blue!20
+    [HafezDB-Duration,fill=orange!20]
+    [IPO-Date,fill=orange!20]
+    [Indices,fill=orange!20
+    [EWI-D,fill=blue!20]
+    [EWPI-D,fill=blue!20]
+    [Industries-D,fill=blue!20]
+    [Overall,fill=blue!20
+    [Annual,fill=orange!20]
+    [Daily,fill=orange!20]]
+    [TEPIX-D,fill=blue!20]]]
+    [Ownership,fill=blue!20
+    [Block-Holders, fill=green!20
+    [Annual,fill=red!20]
+    [Daily,fill=red!20]
+    [Holders-A,fill=red!20]]
+    [CR-CFR, fill=green!20]]]]
+\end{forest}
+
+\end{document}
